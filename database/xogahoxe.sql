@@ -25,6 +25,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user`
+--
+
+CREATE TABLE `User` (
+  `mail` varchar(60) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `last_name` varchar(60) NOT NULL,
+  `city` text,
+  `phone` int(12),
+  `age` int(3),
+  `image` varchar(255),
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `event`
 --
 
@@ -40,7 +57,8 @@ CREATE TABLE `Event` (
   `description` text,
   `info` int(11),
   `id` tinyint(6) NOT NULL,
-  `owner` tinytext NOT NULL
+  `owner` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -59,26 +77,11 @@ CREATE TABLE `Product` (
   `description` text,
   `id` tinyint(6) NOT NULL AUTO_INCREMENT,
   `owner` varchar(30) NOT NULL,
-  `sold` tinyint(1) NOT NULL DEFAULT 0
+  `sold` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `User` (
-  `mail` varchar(60) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `last_name` varchar(60) NOT NULL,
-  `city` text,
-  `phone` int(12),
-  `age` int(3),
-  `image` varchar(255)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -87,26 +90,22 @@ CREATE TABLE `User` (
 --
 -- Indexes for table `event`
 --
-ALTER TABLE `Event`
-  ADD PRIMARY KEY (`id`),
-  CONSTRAINT FK_EventUser 
-      FOREIGN KEY (`owner`) 
-      REFERENCES `User`(`username`);
+ALTER TABLE Event
+    ADD CONSTRAINT EventUser_FK
+    FOREIGN KEY (owner)
+    REFERENCES User(username);
 
 --
 -- Indexes for table `product`
 --
-ALTER TABLE `Product`
-  ADD PRIMARY KEY (`id`),
-  CONSTRAINT FK_ProductUser
-      FOREIGN KEY (`owner`) 
-      REFERENCES `User`(`username`);
+ALTER TABLE Product
+    ADD CONSTRAINT ProductUser_FK
+    FOREIGN KEY (owner)
+    REFERENCES User(username);
 
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `User`
-  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
