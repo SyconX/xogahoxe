@@ -1,0 +1,27 @@
+footer {
+    margin-top: 40px;
+    height: 60px;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .copyright {
+        margin-left: 15px;
+        flex-basis: 30%;
+    }
+    .socialMenu {
+        flex-basis: 70%;
+
+        div {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            li {
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+footer {
+  margin-top: 40px;
+  height: 60px;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .copyright {
+  margin-left: 15px;
+  flex-basis: 30%;
+}
+footer .socialMenu {
+  flex-basis: 70%;
+}
+footer .socialMenu div {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+footer .socialMenu div li {
+  padding: 10px;
+}/*# sourceMappingURL=footer.css.map */

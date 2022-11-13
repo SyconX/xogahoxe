@@ -1,10 +1,93 @@
-picture {
-  opacity: 15%;
-  position: fixed;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.parallax {
+  /* Create the parallax scrolling effect */
+  display: flex;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.65;
+}
+.parallax.first {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/background2.jpg");
+  /* Set a specific height */
+  min-height: 100%;
+}
+.parallax.second {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/background1.jpg");
+  /* Set a specific height */
+  min-height: 420px;
+}
+.parallax.third {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/background4.jpg");
+  /* Set a specific height */
+  min-height: 420px;
+}
+.parallax .mainTitle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.parallax .mainTitle:hover {
+  opacity: 1;
+}
+.parallax .mainTitle a {
+  text-decoration: none;
+}
+.parallax .mainTitle a span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f7f7f7;
+  border-radius: 20px;
+  padding: 20px 0 20px 12px;
+  padding-right: 0px;
+  font-size: 25px;
+  letter-spacing: 12px;
+}
+.parallax .mainTitle a span:hover {
+  background-color: #9755ba;
+}
+.parallax > a {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.parallax > a:hover {
+  color: #aa43ac;
+  transform: scale(2, 2);
+}
+.parallax > a .fa-arrow-down {
+  color: #f7f7f7;
+  font-size: 24px;
+}
+
+.text {
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text h5 {
+  width: 70%;
+  text-align: center;
 }
 
 .container {
-  height: 100vh;
   position: relative;
   display: flex;
 }
@@ -12,9 +95,6 @@ picture {
   margin: auto;
   padding: 20px;
   flex-basis: 50%;
-}
-.container h3 {
-  border-right: 3px double black;
 }
 .container form {
   display: flex;

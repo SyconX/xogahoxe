@@ -1,9 +1,113 @@
-picture {
-    opacity: 15%;
-    position: fixed;
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+}
+
+.parallax {
+    /* Create the parallax scrolling effect */
+    display: flex;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.65;
+
+    &.first {
+        /* The image used */
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            ),
+            url("/resources/images/background2.jpg");
+
+        /* Set a specific height */
+        min-height: 100%;
+    }
+    &.second {
+        /* The image used */
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            ),
+            url("/resources/images/background1.jpg");
+
+        /* Set a specific height */
+        min-height: 420px;
+    }
+    &.third {
+        /* The image used */
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            ),
+            url("/resources/images/background4.jpg");
+
+        /* Set a specific height */
+        min-height: 420px;
+    }
+
+    .mainTitle {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+
+        &:hover {
+            opacity: 1;
+        }
+        a {
+            text-decoration: none;
+            span {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #f7f7f7;
+                border-radius: 20px;
+                padding: 20px 0 20px 12px;
+                padding-right: 0px;
+                font-size: 25px;
+                letter-spacing: 12px;
+
+                &:hover {
+                    background-color: #9755ba;
+                }
+            }
+        }
+    }
+    > a {
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 18px;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+
+        &:hover {
+            color: #aa43ac;
+            transform: scale(2, 2);
+        }
+
+        .fa-arrow-down {
+            color: #f7f7f7;
+            font-size: 24px;
+        }
+    }
+}
+
+.text {
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h5 {
+        width: 70%;
+        text-align: center;
+    }
 }
 .container {
-    height: 100vh;
     position: relative;
     display: flex;
 
@@ -13,9 +117,6 @@ picture {
         flex-basis: 50%;
     }
 
-    h3 {
-        border-right: 3px double black;
-    }
     form {
         display: flex;
         flex-direction: column;
