@@ -1,3 +1,6 @@
+<?
+include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +26,10 @@
             <input type="text" name="newEvent" id="newEvent" value="newEvent" disabled hidden>
             <input type="submit" value="Crear evento">
         </form>
-        <? 
-        foreach ($events as $event) {
-            echo $event;
+        <?php
+        foreach ($eventResponse as $element) {
+            $probando = $element;
+            include(BASE_PATH . VIEWS_PATH . "/components/event.php");
         }
         ?>
     </main>

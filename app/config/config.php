@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 
 // Rutas
 define('BASE_PATH', $_SERVER['DOCUMENT_ROOT']);
@@ -43,17 +44,15 @@ define(
 define(
     'EVENT_TABLE_COLS',
     array(
-        ':games',
+        ':game',
         ':address',
         ':city',
         ':date',
-        ':time',
         ':min_players',
-        ':min_players',
-        ':players',
+        ':max_players',
         ':description',
         ':info',
-        ':id',
+        ':players',
         ':owner'
     )
 );
@@ -67,9 +66,8 @@ define(
         ':address',
         ':city',
         ':description',
-        ':id',
+        ':sold',
         ':owner',
-        ':sold'
     )
 );
 

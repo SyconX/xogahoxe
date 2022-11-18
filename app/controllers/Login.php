@@ -28,7 +28,7 @@ if (trim($_POST['username']) == "") {
             include_once(BASE_PATH . VIEWS_PATH . '/events.php');
         } else {
             $error = "Contraseña incorrecta";
-            header("Location: /home");
+            include_once(BASE_PATH . VIEWS_PATH . '/events.php');
         }
     }
 }

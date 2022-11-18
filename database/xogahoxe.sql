@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `user`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `user` (
   `mail` varchar(60) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(30) NOT NULL,
   `last_name` varchar(60) NOT NULL,
-  `city` text,
+  `city` varchar(60),
   `phone` int(12),
   `age` int(3),
   `image` varchar(255),
@@ -45,19 +45,18 @@ CREATE TABLE `User` (
 -- Table structure for table `event`
 --
 
-CREATE TABLE `Event` (
+CREATE TABLE `event` (
   `game` varchar(60) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `city` tinytext NOT NULL,
+  `city` varchar(60) NOT NULL,
   `date` date NOT NULL,
-  `time` time NOT NULL,
   `min_players` tinyint(2) NOT NULL,
   `max_players` tinyint(2) NOT NULL,
-  `players` varchar(255) NOT NULL,
   `description` text,
-  `info` int(11),
-  `id` tinyint(6) NOT NULL,
+  `info` text,
+  `players` varchar(255) NOT NULL,
   `owner` varchar(30) NOT NULL,
+  `id` tinyint(6) AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,7 +66,7 @@ CREATE TABLE `Event` (
 -- Table structure for table `product`
 --
 
-CREATE TABLE `Product` (
+CREATE TABLE `product` (
   `name` tinytext NOT NULL,
   `price` tinyint(12) NOT NULL,
   `status` tinytext NOT NULL,
@@ -75,9 +74,9 @@ CREATE TABLE `Product` (
   `address` varchar(60) NOT NULL,
   `city` tinytext NOT NULL,
   `description` text,
-  `id` tinyint(6) NOT NULL AUTO_INCREMENT,
+  `sold` tinyint(1) DEFAULT 0,
   `owner` varchar(30) NOT NULL,
-  `sold` tinyint(1) NOT NULL DEFAULT 0,
+  `id` tinyint(6) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -90,18 +89,18 @@ CREATE TABLE `Product` (
 --
 -- Indexes for table `event`
 --
-ALTER TABLE Event
+ALTER TABLE event
     ADD CONSTRAINT EventUser_FK
     FOREIGN KEY (owner)
-    REFERENCES User(username);
+    REFERENCES user(username);
 
 --
 -- Indexes for table `product`
 --
-ALTER TABLE Product
+ALTER TABLE product
     ADD CONSTRAINT ProductUser_FK
     FOREIGN KEY (owner)
-    REFERENCES User(username);
+    REFERENCES user(username);
 
 --
 -- Indexes for table `user`
@@ -114,7 +113,3 @@ ALTER TABLE Product
 --
 -- AUTO_INCREMENT for table `product`
 --
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

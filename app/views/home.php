@@ -22,7 +22,7 @@ if (!isset($_SESSION))
     <div class="parallax first">
         <div class="mainTitle">
             <a href="/eventos">
-                <span href="/eventos">xoga hoxe</span>
+                <span>xoga hoxe</span>
             </a>
         </div>
         <a href="#login">
