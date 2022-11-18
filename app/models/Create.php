@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
 class Create extends ConnectionDB
 {
@@ -6,7 +7,7 @@ class Create extends ConnectionDB
     public function query($table, $cols, $data)
     {
         $this->connect();
-        $sql = "INSERT INTO $table VALUES (" . implode(',', $cols) . ")";
+        $sql = "INSERT INTO $table (" . str_replace(':', '', implode(',', $cols)) . ") VALUES (" . implode(',', $cols) . ")";
         try {
             $stmt = $this->pdo->prepare($sql);
             for ($i = 0; $i < count($cols); $i++) {
@@ -14,8 +15,8 @@ class Create extends ConnectionDB
             }
             $stmt->execute();
         } catch (PDOException $e) {
-            die("ERROR: No se ha podido crear el usuario" . $e->getMessage() .
-                "<br><br><a href='/home'>Volver al inicio</a>");
+            die("ERROR: No se ha podido crear. " . $e->getMessage() .
+                "<br><br><a href='inicio'>Volver al inicio</a>");
         }
     }
 }
