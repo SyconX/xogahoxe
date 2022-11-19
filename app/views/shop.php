@@ -17,10 +17,15 @@
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
     <main>
         <? 
+        <h2>
+            tienda.
+        </h2>
+        <div class="grid-container">
         foreach ($products as $product) {
-            echo $product;
+            
         }
         ?>
+        </div>
     </main>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/aside.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/footer.php'); ?>

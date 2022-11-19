@@ -1,4 +1,5 @@
 <?php
+// No mostrar warnings
 error_reporting(E_ERROR | E_PARSE);
 
 // Rutas
@@ -72,8 +73,7 @@ define(
 );
 
 
-
-include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
+// Include modelos
 include_once BASE_PATH . MODELS_PATH . '/ConnectionDB.php';
 include_once BASE_PATH . MODELS_PATH . '/Read.php';
 include_once BASE_PATH . MODELS_PATH . '/Create.php';

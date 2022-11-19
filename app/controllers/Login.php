@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
 // Usuario vacío
 if (trim($_POST['username']) == "") {
-    include_once(BASE_PATH . VIEWS_PATH . '/register.php');
+    include_once(BASE_PATH . VIEWS_PATH . '/components/newUser.php');
 } else {
     $userRead = new Read();
     // Consulta usuario BD
@@ -15,20 +15,20 @@ if (trim($_POST['username']) == "") {
             trim($_POST['username'])
         )
     );
-    $err = "";
+    $error = "";
     // Usuario no existe en BD
     if ($user === false) {
-        include_once(BASE_PATH . VIEWS_PATH . '/register.php');
+        include_once(BASE_PATH . VIEWS_PATH . '/components/newUser.php');
     } else {
         // Agregar password_hash() tanto para encriptar y guardar como para 
         // desencriptar y comprobar con la contraseña en login
 
         // Comprueba contraseña
         if ($user[0]->password == $_POST['password']) {
-            include_once(BASE_PATH . VIEWS_PATH . '/events.php');
+            include(BASE_PATH . CONTROLLERS_PATH . '/Events.php');
         } else {
             $error = "Contraseña incorrecta";
-            include_once(BASE_PATH . VIEWS_PATH . '/events.php');
+            include(BASE_PATH . VIEWS_PATH . '/home.php');
         }
     }
 }

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action=<?= CONTROLLERS_PATH . "/Register.php" ?> method="post">
+    <form action=<?= CONTROLLERS_PATH . "/NewUser.php" ?> method="post">
         <label for="email">Correo electrónico</label>
         <input type="email" name="email" id="email" required>
         <label for="username">Nombre de usuario</label>

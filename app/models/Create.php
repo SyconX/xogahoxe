@@ -16,7 +16,7 @@ class Create extends ConnectionDB
             $stmt->execute();
         } catch (PDOException $e) {
             die("ERROR: No se ha podido crear. " . $e->getMessage() .
-                "<br><br><a href='inicio'>Volver al inicio</a>");
+                "<br><br><a href='Login.php'>Volver al inicio</a>");
         }
     }
 }

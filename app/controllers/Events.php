@@ -26,7 +26,7 @@ $eventResponse = $eventRead->response(
     $eventRead->queryAll(EVENT_TABLE)
 );
 
-include BASE_PATH . VIEWS_PATH . '/events.php';
+include_once BASE_PATH . VIEWS_PATH . '/events.php';
 
 /** Generar datos y cargar vista. En la vista se usan los datos.
  * Se pueden encadenar. En este caso se llama a eventos

@@ -5,7 +5,7 @@ $request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
     case '/index.php':
-        header('Location: /inicio');
+        require __DIR__ . VIEWS_PATH . '/home.php';
         break;
     case '/':
         require __DIR__ . VIEWS_PATH . '/home.php';

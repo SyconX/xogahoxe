@@ -25,7 +25,7 @@ if (!isset($_SESSION))
                 <span>xoga hoxe</span>
             </a>
         </div>
-        <a href="#login">
+        <a href="#formLogin">
             <i class="fa fa-arrow-down" aria-hidden="true"></i>
         </a>
     </div>
@@ -64,16 +64,17 @@ if (!isset($_SESSION))
             lacinia, maximus nibh ac, tincidunt sapien. Curabitur sodales purus dolor, id fringilla dui feugiat a.
         </h5>
     </div>
-    <div class="container" id="login">
+    <div class="container" id="formLogin">
         <form action=<?= CONTROLLERS_PATH . "/Login.php" ?> method="post">
-            <label for="username">Nombre de usuario</label>
-            <input type="text" name="username" id="username">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password">
-            <input type="submit" value="Regístrate o inicia sesión">
-            <p class="passwordError">
-                <?= isset($err) ? $err : ''; ?>
-            </p>
+            <?= $error !="" ? $error : "" ?>
+                <label for="username">Nombre de usuario</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password">
+                <input type="submit" value="Regístrate o inicia sesión">
+                <p class="passwordError">
+                    <?= isset($err) ? $err : ''; ?>
+                </p>
         </form>
     </div>
 
