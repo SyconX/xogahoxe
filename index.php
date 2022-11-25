@@ -17,13 +17,16 @@ switch ($request) {
         require __DIR__ . VIEWS_PATH . '/home.php';
         break;
     case '/tienda':
-        require __DIR__ . VIEWS_PATH . '/shop.php';
+        require __DIR__ . CONTROLLERS_PATH . '/Shop.php';
         break;
     case '/eventos':
         require __DIR__ . CONTROLLERS_PATH . '/Events.php';
         break;
     case '/juegos':
         require __DIR__ . VIEWS_PATH . '/games.php';
+        break;
+    case '/perfil':
+        require __DIR__ . VIEWS_PATH . '/profile.php';
         break;
 
     default:

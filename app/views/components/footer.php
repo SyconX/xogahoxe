@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <div class="copyright">XogaHoxe | 2022</div>
     <div class="socialMenu">
         <div>

@@ -1,9 +1,3 @@
-<?php
-
-if (!isset($_SESSION))
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +19,7 @@ if (!isset($_SESSION))
                 <span>xoga hoxe</span>
             </a>
         </div>
-        <a href="#formLogin">
+        <a href="#footer">
             <i class="fa fa-arrow-down" aria-hidden="true"></i>
         </a>
     </div>
@@ -64,9 +58,10 @@ if (!isset($_SESSION))
             lacinia, maximus nibh ac, tincidunt sapien. Curabitur sodales purus dolor, id fringilla dui feugiat a.
         </h5>
     </div>
+    <?php if (!isset($_SESSION['userLogin'])) { ?>
     <div class="container" id="formLogin">
         <form action=<?= CONTROLLERS_PATH . "/Login.php" ?> method="post">
-            <?= $error !="" ? $error : "" ?>
+            <?= $error != "" ? $error : "" ?>
                 <label for="username">Nombre de usuario</label>
                 <input type="text" name="username" id="username">
                 <label for="password">Contraseña</label>
@@ -76,6 +71,7 @@ if (!isset($_SESSION))
                     <?= isset($err) ? $err : ''; ?>
                 </p>
         </form>
+        <?php } ?>
     </div>
 
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/footer.php'); ?>

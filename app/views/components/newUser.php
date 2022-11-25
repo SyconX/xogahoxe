@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Usuario</title>
-    <link rel="stylesheet" href=<?= CSS_PATH . "/register.css" ?>>
+    <link rel="stylesheet" href=<?= CSS_PATH . "/newUser.css" ?>>
 </head>
 
 <body>

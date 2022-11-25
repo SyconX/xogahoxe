@@ -1,3 +1,6 @@
+<?
+include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,19 +18,16 @@
 
 <body>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideShop.php'); ?>
     <main>
-        <? 
-        <h2>
-            tienda.
-        </h2>
         <div class="grid-container">
-        foreach ($products as $product) {
-            
-        }
-        ?>
+            <?php
+            foreach ($productResponse as $p) {
+                include(BASE_PATH . VIEWS_PATH . "/components/product.php");
+            }
+            ?>
         </div>
     </main>
-    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/aside.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/footer.php'); ?>
 </body>
 

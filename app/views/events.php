@@ -19,12 +19,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 <body>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
     <main>
+        <?php if (isset($_SESSION['userLogin'])) { ?>
         <form action=<?= VIEWS_PATH . "/components/newEvent.php" ?> method="post">
-            <input type="text" name="newEvent" id="newEvent" value="newEvent" disabled hidden>
-            <input type="submit" value="Crear evento">
+            <input type="submit" class="btn btn-dark" value="Crear evento">
         </form>
         <?php
-        foreach ($eventResponse as $element) {
+        }
+        foreach ($eventResponse as $e) {
             include(BASE_PATH . VIEWS_PATH . "/components/event.php");
         }
         ?>

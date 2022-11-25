@@ -1,0 +1,25 @@
+main {
+    min-height: calc(100vh - 220px);
+    margin: 48px 40px;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 40px;
+
+        .card {
+            img {
+                object-fit: cover;
+                height: 260px;
+            }
+            .card-price {
+                position: relative;
+                .icon {
+                    position: absolute;
+                    top: 2px;
+                    right: 0px;
+                }
+            }
+        }
+    }
+}

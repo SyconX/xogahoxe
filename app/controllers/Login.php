@@ -1,6 +1,10 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
+if ($_POST['logout']) {
+    session_destroy();
+    header("Location:/inicio");
+}
 // Usuario vacío
 if (trim($_POST['username']) == "") {
     include_once(BASE_PATH . VIEWS_PATH . '/components/newUser.php');
@@ -25,6 +29,7 @@ if (trim($_POST['username']) == "") {
 
         // Comprueba contraseña
         if ($user[0]->password == $_POST['password']) {
+            $_SESSION['userLogin'] = $user[0];
             include(BASE_PATH . CONTROLLERS_PATH . '/Events.php');
         } else {
             $error = "Contraseña incorrecta";

@@ -50,7 +50,6 @@ CREATE TABLE `event` (
   `address` varchar(255) NOT NULL,
   `city` varchar(60) NOT NULL,
   `date` datetime NOT NULL,
-  `min_players` tinyint(2) NOT NULL,
   `max_players` tinyint(2) NOT NULL,
   `description` text,
   `info` text,

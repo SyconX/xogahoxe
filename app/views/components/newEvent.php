@@ -13,6 +13,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
 <body>
     <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
+        <input type="hidden" name="newEvent" value="newEvent">
         <label for="game">Juego</label>
         <input type="text" name="game" id="game">
         <label for="address">Dirección</label>
@@ -21,8 +22,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         <input type="text" name="city" id="city">
         <label for="date">Fecha</label>
         <input type="datetime-local" name="date" id="date">
-        <label for="min_players">Jugadores minimos</label>
-        <input type="number" name="min_players" id="min_players">
         <label for="max_players">Jugadores máximos</label>
         <input type="number" name="max_players" id="max_players">
         <label for="description">Descripción</label>

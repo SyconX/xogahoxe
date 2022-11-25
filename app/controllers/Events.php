@@ -1,23 +1,29 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
-if ($_POST['game'] && $_POST['game'] != "") {
+if ($_POST['newEvent']) {
     $eventCreate = new Create();
     $data = array(
         $_POST['game'],
         $_POST['address'],
         $_POST['city'],
         $_POST['date'],
-        $_POST['min_players'],
         $_POST['max_players'],
         $_POST['description'],
         $_POST['info'],
-        'javier',
+        serialize(array($_SESSION['userLogin']->username)),
         // Tanto para jugadores como owner, recoger
-        'javier', // el usuario logueado en ese momento
+        $_SESSION['userLogin']->username, // el usuario logueado en ese momento
 
     );
     $events = $eventCreate->query(EVENT_TABLE, EVENT_TABLE_COLS, $data);
+} else if ($_POST['editEvent']) {
+
+} else if ($_POST['deleteEvent']) {
+    $eventDelete = new Delete();
+    $eventDelete->query(EVENT_TABLE, $_POST['eventID']);
+} else if ($_POST['joinEvent']) {
+
 }
 
 $eventRead = new Read();

@@ -1,0 +1,22 @@
+main {
+  min-height: calc(100vh - 220px);
+  margin: 48px 40px;
+}
+main .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+}
+main .grid-container .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 260px;
+}
+main .grid-container .card .card-price {
+  position: relative;
+}
+main .grid-container .card .card-price .icon {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}/*# sourceMappingURL=shop.css.map */

@@ -49,7 +49,6 @@ define(
         ':address',
         ':city',
         ':date',
-        ':min_players',
         ':max_players',
         ':description',
         ':info',
@@ -79,5 +78,12 @@ include_once BASE_PATH . MODELS_PATH . '/Read.php';
 include_once BASE_PATH . MODELS_PATH . '/Create.php';
 include_once BASE_PATH . MODELS_PATH . '/Delete.php';
 include_once BASE_PATH . MODELS_PATH . '/Update.php';
+
+// Sesión
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 
 ?>
