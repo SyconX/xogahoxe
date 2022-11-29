@@ -51,8 +51,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Añadir">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        <input type="submit" class="btn btn-outline-dark" value="Añadir">
                     </div>
                 </form>
 
