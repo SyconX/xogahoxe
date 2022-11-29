@@ -6,11 +6,11 @@ aside {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  z-index: 9999;
+  z-index: 1;
   background-color: white;
 }
 aside .filter {
+  margin-left: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,4 @@ aside .filter {
 }
 aside .filter p {
   margin-bottom: 0;
-}
-aside .addProduct {
-  order: 2;
 }/*# sourceMappingURL=aside.css.map */

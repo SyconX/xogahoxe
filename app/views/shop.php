@@ -19,6 +19,48 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 <body>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideShop.php'); ?>
+    main
+    <?php if (isset($_SESSION['userLogin'])) { ?>
+    <!-- The Modal -->
+    <div class="modal fade" id="newEventModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Añadir un nuevo producto</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form action=<?= CONTROLLERS_PATH . "/Shop.php" ?> method="post">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <input type="hidden" name="newProduct" value="newProduct">
+                        <label for="productName">Juego</label>
+                        <input type="text" name="productName" id="productName" required>
+                        <label for="price">Precio</label>
+                        <input type="number" step="0.01" name="price" id="price" required>
+                        <label for="status">Estado del producto</label>
+                        <input type="text" name="status" id="status" required>
+                        <label for="delivery">Método entrega</label>
+                        <input type="text" name="delivery" id="delivery" required>
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="address" required>
+                        <label for="city">Ciudad</label>
+                        <input type="text" name="city" id="city" required>
+                        <label for="description">Descripción</label>
+                        <input type="text" name="description" id="description">
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="Añadir">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <?php } ?>
     <main>
         <div class="grid-container">
             <?php

@@ -36,11 +36,11 @@
 .li-nav:after {
   content: "";
   position: absolute;
-  width: 60%;
+  width: 80%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 8px;
-  left: 20%;
+  bottom: 6px;
+  left: 10%;
   background-color: #9755ba;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
@@ -52,16 +52,16 @@
 
 .a-nav {
   color: #777;
+  text-decoration: none;
 }
 .a-nav:hover {
   color: #9755ba;
-  text-decoration: none;
 }
 
 header {
   position: fixed;
   top: 0;
   height: 48px;
-  z-index: 9999;
+  z-index: 1;
   background-color: white;
 }/*# sourceMappingURL=header.css.map */

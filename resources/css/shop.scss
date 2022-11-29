@@ -1,16 +1,22 @@
+.modal {
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+    }
+}
 main {
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 216px);
     margin: 48px 40px;
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 40px;
 
         .card {
             img {
                 object-fit: cover;
-                height: 260px;
+                height: 360px;
             }
             .card-price {
                 position: relative;

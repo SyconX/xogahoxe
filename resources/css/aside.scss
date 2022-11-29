@@ -5,11 +5,11 @@ aside {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    z-index: 9999;
+    z-index: 1;
     background-color: white;
 
     .filter {
+        margin-left: 40px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -17,8 +17,5 @@ aside {
         p {
             margin-bottom: 0;
         }
-    }
-    .addProduct {
-        order: 2;
     }
 }
