@@ -5,74 +5,78 @@ html {
   color: #777;
 }
 
-main {
+body #top {
+  position: absolute;
+  top: 0;
+}
+body main {
   min-height: calc(100vh - 216px);
   margin-top: 88px;
 }
-main > .btn:first-of-type {
+body main > .btn:first-of-type {
   margin-left: 20px;
 }
-main .modal .modal-body {
+body main .modal .modal-body {
   display: flex;
   flex-direction: column;
 }
-main .event {
+body main .event {
   position: relative;
   margin: 40px 20px;
 }
-main .event .card {
+body main .event .card {
   height: 220px;
   width: 65vw;
   overflow: hidden;
 }
-main .event .card .row > *:first-child {
+body main .event .card .row > *:first-child {
   overflow: hidden;
 }
-main .event .card .row > *:first-child img {
+body main .event .card .row > *:first-child img {
   height: 220px;
   width: 310px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .event .card .row > *:first-child img:hover {
+body main .event .card .row > *:first-child img:hover {
   transform: scale(1.2);
 }
-main .event .card .card-body {
+body main .event .card .card-body {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   grid-template-rows: repeat(2, 90px);
 }
-main .event .card .card-body > * {
+body main .event .card .card-body > * {
   margin-bottom: 0;
 }
-main .event .card .card-body .first-card {
+body main .event .card .card-body .first-card {
   grid-row: 1;
   grid-column: 1/3;
   align-self: start;
   justify-self: start;
   text-align: start;
 }
-main .event .card .card-body .second-card {
+body main .event .card .card-body .second-card {
   grid-row: 1;
   grid-column: 3;
 }
-main .event .card .card-body .second-card .date {
+body main .event .card .card-body .second-card .date {
   align-self: start;
   justify-self: end;
   text-align: end;
 }
-main .event .card .card-body .second-card .city {
+body main .event .card .card-body .second-card .city {
   align-self: start;
   justify-self: end;
   text-align: end;
 }
-main .event .card .card-body .third-card {
+body main .event .card .card-body .third-card {
   grid-row: 2/3;
   grid-column: 1/4;
   align-items: left;
   text-align: left;
 }
-main .event .card .card-body .players {
+body main .event .card .card-body .players {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   background-size: 60px;
@@ -80,19 +84,20 @@ main .event .card .card-body .players {
   padding-right: 12px;
   font-size: 1.2em;
   position: absolute;
-  left: -62px;
+  left: 0;
   bottom: 0;
   grid-row: 3;
   grid-column: 1;
 }
-main .event .btn-dark,
-main .event .btn-warning {
+body main .event .btn-dark,
+body main .event .btn-outline-dark,
+body main .event .btn-warning {
   width: 70px;
   position: absolute;
   bottom: 18px;
   right: 410px;
 }
-main .event .btn-danger {
+body main .event .btn-danger {
   width: 70px;
   position: absolute;
   bottom: -12px;

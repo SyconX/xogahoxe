@@ -1,0 +1,19 @@
+@import "utilities.scss";
+
+body {
+    min-height: 90vh;
+    display: flex;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        > input {
+            margin-bottom: 10px;
+        }
+        > * {
+            width: 320px;
+        }
+    }
+}

@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <form action=<?= CONTROLLERS_PATH . "/NewUser.php" ?> method="post">
+    <a href="/inicio">Volver a inicio</a>
+    <h1>Regístrate</h1>
+    <form action=<?= CONTROLLERS_PATH . "/Login.php" ?> method="post">
         <label for="email">Correo electrónico</label>
         <input type="email" name="email" id="email" required>
         <label for="username">Nombre de usuario</label>
@@ -21,6 +23,7 @@
         <input type="text" name="name" id="name" required>
         <label for="last_name">Apellidos</label>
         <input type="text" name="last_name" id="last_name" required>
+        <input type="hidden" name="newUser" value="newUser">
         <input type="submit" value="Regístrate">
     </form>
 </body>

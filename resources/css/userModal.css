@@ -1,0 +1,7 @@
+#userModal .modal-body {
+  display: flex;
+  flex-direction: column;
+}
+#userModal .modal-body > input {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=userModal.css.map */

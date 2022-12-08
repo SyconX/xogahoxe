@@ -9,15 +9,14 @@
     <?= BOOTSTRAP_LINK ?>
         <link rel="stylesheet" href=<?= CSS_PATH . "/games.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/header.css" ?>>
-        <link rel="stylesheet" href=<?= CSS_PATH . "/aside.css" ?>>
+        <link rel="stylesheet" href=<?= CSS_PATH . "/userModal.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/footer.css" ?>>
 </head>
 
 <body>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
     <main>
-        <? 
-        ?>
     </main>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/aside.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/footer.php'); ?>

@@ -13,13 +13,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         <link rel="stylesheet" href=<?= CSS_PATH . "/shop.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/header.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/aside.css" ?>>
+        <link rel="stylesheet" href=<?= CSS_PATH . "/userModal.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/footer.css" ?>>
 </head>
 
 <body>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideShop.php'); ?>
-    main
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
+
     <?php if (isset($_SESSION['userLogin'])) { ?>
     <!-- The Modal -->
     <div class="modal fade" id="newEventModal">

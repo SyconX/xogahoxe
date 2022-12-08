@@ -13,9 +13,9 @@ class Create extends ConnectionDB
             for ($i = 0; $i < count($cols); $i++) {
                 $stmt->bindParam($cols[$i], $data[$i]);
             }
-            $stmt->execute();
+            return $stmt->execute();
         } catch (PDOException $e) {
-            die("ERROR: No se ha podido crear. " . $e->getMessage() .
+            return ("ERROR: No se ha podido crear. " . $e->getMessage() .
                 "<br><br><a href='Login.php'>Volver al inicio</a>");
         }
     }

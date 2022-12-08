@@ -24,4 +24,19 @@ class Update extends ConnectionDB
             die("ERROR: " . $e->getMessage());
         }
     }
+
+    public function userJoinEvent($players, $id)
+    {
+        $this->connect();
+        $sql = "UPDATE event SET players = :p WHERE id = :i";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(":p", $players);
+        $stmt->bindParam(":i", $id);
+        try {
+            $stmt->execute();
+            return ($stmt->rowCount() > 0) ? $stmt->fetchAll(PDO::FETCH_OBJ) : false;
+        } catch (PDOException $e) {
+            die("ERROR: " . $e->getMessage());
+        }
+    }
 }

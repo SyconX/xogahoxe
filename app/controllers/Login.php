@@ -19,9 +19,27 @@ if (trim($_POST['username']) == "") {
             trim($_POST['username'])
         )
     );
-    $error = "";
-    // Usuario no existe en BD
-    if ($user === false) {
+    // Usuario no existe en BD y se pide registro
+    if ($user === false && isset($_POST['newUser'])) {
+        // Crea usuario
+        $userCreate = new Create();
+        $data = array(
+            $_POST['email'],
+            $_POST['username'],
+            $_POST['password'],
+            $_POST['name'],
+            $_POST['last_name'],
+        );
+        $result = $userCreate->query(USER_TABLE, USER_TABLE_COLS, $data);
+
+        if ($result == 1) {
+            $_SESSION['loginMsg'] = "Usuario creado con éxito";
+        } else {
+            $_SESSION['loginMsg'] = $result;
+        }
+        header('Location: /inicio#formLogin');
+        // Usuario no existe en BD
+    } else if ($user === false) {
         include_once(BASE_PATH . VIEWS_PATH . '/components/newUser.php');
     } else {
         // Agregar password_hash() tanto para encriptar y guardar como para 
@@ -32,8 +50,9 @@ if (trim($_POST['username']) == "") {
             $_SESSION['userLogin'] = $user[0];
             include(BASE_PATH . CONTROLLERS_PATH . '/Events.php');
         } else {
-            $error = "Contraseña incorrecta";
-            include(BASE_PATH . VIEWS_PATH . '/home.php');
+
+            $_SESSION['loginMsg'] = "Contraseña incorrecta";
+            header('Location: /inicio#formLogin');
         }
     }
 }

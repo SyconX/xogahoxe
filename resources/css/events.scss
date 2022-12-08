@@ -4,106 +4,113 @@ html {
     font: 400 15px/1.8 "Lato", sans-serif;
     color: #777;
 }
-main {
-    min-height: calc(100vh - 216px);
-    margin-top: 88px;
-
-    > .btn:first-of-type {
-        margin-left: 20px;
+body {
+    #top {
+        position: absolute;
+        top: 0;
     }
-    .modal {
-        .modal-body {
-            display: flex;
-            flex-direction: column;
+    main {
+        min-height: calc(100vh - 216px);
+        margin-top: 88px;
+
+        > .btn:first-of-type {
+            margin-left: 20px;
         }
-    }
-    .event {
-        position: relative;
-        margin: 40px 20px;
+        .modal {
+            .modal-body {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .event {
+            position: relative;
+            margin: 40px 20px;
 
-        .card {
-            height: 220px;
-            width: 65vw;
-            overflow: hidden;
+            .card {
+                height: 220px;
+                width: 65vw;
+                overflow: hidden;
 
-            .row {
-                > *:first-child {
-                    overflow: hidden;
+                .row {
+                    > *:first-child {
+                        overflow: hidden;
 
-                    img {
-                        height: 220px;
-                        width: 310px;
-                        object-fit: cover;
+                        img {
+                            height: 220px;
+                            width: 310px;
+                            object-fit: cover;
 
-                        &:hover {
-                            transform: scale(1.2);
+                            &:hover {
+                                transform: scale(1.2);
+                            }
                         }
                     }
                 }
-            }
-            .card-body {
-                // height: 220px;
-                display: grid;
-                grid-template-columns: repeat(3, 2fr);
-                grid-template-rows: repeat(2, 90px);
+                .card-body {
+                    // height: 220px;
+                    display: grid;
+                    grid-template-columns: repeat(3, 2fr);
+                    grid-template-rows: repeat(2, 90px);
 
-                > * {
-                    margin-bottom: 0;
-                }
-                .first-card {
-                    grid-row: 1;
-                    grid-column: 1/3;
-                    align-self: start;
-                    justify-self: start;
-                    text-align: start;
-                }
-                .second-card {
-                    grid-row: 1;
-                    grid-column: 3;
-                    .date {
-                        align-self: start;
-                        justify-self: end;
-                        text-align: end;
+                    > * {
+                        margin-bottom: 0;
                     }
-                    .city {
+                    .first-card {
+                        grid-row: 1;
+                        grid-column: 1/3;
                         align-self: start;
-                        justify-self: end;
-                        text-align: end;
+                        justify-self: start;
+                        text-align: start;
                     }
-                }
-                .third-card {
-                    grid-row: 2/3;
-                    grid-column: 1/4;
-                    align-items: left;
-                    text-align: left;
-                }
-                .players {
-                    color: white;
-                    background-color: rgba(black, 0.5);
-                    background-size: 60px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    font-size: 1.2em;
-                    position: absolute;
-                    left: -62px;
-                    bottom: 0;
-                    grid-row: 3;
-                    grid-column: 1;
+                    .second-card {
+                        grid-row: 1;
+                        grid-column: 3;
+                        .date {
+                            align-self: start;
+                            justify-self: end;
+                            text-align: end;
+                        }
+                        .city {
+                            align-self: start;
+                            justify-self: end;
+                            text-align: end;
+                        }
+                    }
+                    .third-card {
+                        grid-row: 2/3;
+                        grid-column: 1/4;
+                        align-items: left;
+                        text-align: left;
+                    }
+                    .players {
+                        color: white;
+                        background-color: rgba(black, 0.5);
+                        background-size: 60px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        font-size: 1.2em;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        grid-row: 3;
+                        grid-column: 1;
+                    }
                 }
             }
-        }
-        .btn-dark,
-        .btn-warning {
-            width: 70px;
-            position: absolute;
-            bottom: 18px;
-            right: 410px;
-        }
-        .btn-danger {
-            width: 70px;
-            position: absolute;
-            bottom: -12px;
-            right: 410px;
+            .btn-dark,
+            .btn-outline-dark,
+            .btn-warning {
+                width: 70px;
+                position: absolute;
+                bottom: 18px;
+                right: 410px;
+            }
+            .btn-danger {
+                width: 70px;
+                position: absolute;
+                bottom: -12px;
+                right: 410px;
+            }
         }
     }
 }

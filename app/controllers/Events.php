@@ -17,13 +17,26 @@ if ($_POST['newEvent']) {
 
     );
     $events = $eventCreate->query(EVENT_TABLE, EVENT_TABLE_COLS, $data);
+
 } else if ($_POST['editEvent']) {
+
 
 } else if ($_POST['deleteEvent']) {
     $eventDelete = new Delete();
     $eventDelete->query(EVENT_TABLE, $_POST['eventID']);
-} else if ($_POST['joinEvent']) {
 
+} else if ($_POST['joinEvent']) {
+    $eventJoin = new Update();
+    array_push($_SESSION['playersEvent']['' . $_POST['eventID'] . ''], $_SESSION['userLogin']->username);
+    $response = $eventJoin->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
+    $_SESSION['playersEvent']['' . $_POST['eventID'] . ''] = "";
+
+} else if ($_POST['leaveEvent']) {
+    $eventLeave = new Update();
+    $position = array_search($_SESSION['userLogin']->username, $_SESSION['playersEvent']['' . $_POST['eventID'] . '']);
+    unset($_SESSION['playersEvent']['' . $_POST['eventID'] . ''][$position]);
+    $response = $eventLeave->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
+    $_SESSION['playersEvent']['' . $_POST['eventID'] . ''] = "";
 }
 
 $eventRead = new Read();

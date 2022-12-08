@@ -1,4 +1,4 @@
-<div class="event">
+<div class="event" id="<?= $e->id ?>">
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
@@ -44,7 +44,7 @@
     if ($_SESSION['userLogin']->username == $e->owner) { ?>
     <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
         <input type="hidden" name="eventID" value="<?= $e->id ?>">
-        <input type="hidden" name="editEvent" value="editEvent">
+        <input type="hidden" name="readEvent" value="readEvent">
         <input class="btn btn-warning btn-sm" type="submit" value="Modificar" />
     </form>
     <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
@@ -52,8 +52,21 @@
         <input type="hidden" name="deleteEvent" value="deleteEvent">
         <input class="btn btn-danger btn-sm" type="submit" value="Eliminar" />
     </form>
-    <?php } else if (isset($_SESSION['userLogin']) && in_array($_SESSION['userLogin']->username, unserialize($e->players))) { ?>
-    <input type="hidden" name="joinEvent" value="joinEvent">
-    <input class="btn btn-dark btn-sm" type="submit" value="Unirse" />
+    <?php } else if (isset($_SESSION['userLogin'])) {
+        if (in_array($_SESSION['userLogin']->username, unserialize($e->players))) {
+            $_SESSION['playersEvent']['' . $e->id . ''] = unserialize($e->players) ?>
+    <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
+        <input type="hidden" name="eventID" value="<?= $e->id ?>">
+        <input type="hidden" name="leaveEvent" value="leaveEvent">
+        <input class="btn btn-outline-dark btn-sm" type="submit" value="Salir" />
+    </form>
+    <?php } else if (count(unserialize($e->players)) < $e->max_players) {
+            $_SESSION['playersEvent']['' . $e->id . ''] = unserialize($e->players) ?>
+    <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
+        <input type="hidden" name="eventID" value="<?= $e->id ?>">
+        <input type="hidden" name="joinEvent" value="joinEvent">
+        <input class="btn btn-dark btn-sm" type="submit" value="Unirse" />
+    </form>
+    <?php } ?>
     <?php } ?>
 </div>

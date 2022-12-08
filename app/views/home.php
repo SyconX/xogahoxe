@@ -58,18 +58,17 @@
             lacinia, maximus nibh ac, tincidunt sapien. Curabitur sodales purus dolor, id fringilla dui feugiat a.
         </h5>
     </div>
+    <p id='loginMsg'>
+        <?= $_SESSION['loginMsg'] ?? "" ?>
+    </p>
     <?php if (!isset($_SESSION['userLogin'])) { ?>
     <div class="container" id="formLogin">
         <form action=<?= CONTROLLERS_PATH . "/Login.php" ?> method="post">
-            <?= $error != "" ? $error : "" ?>
-                <label for="username">Nombre de usuario</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password">
-                <input type="submit" value="Regístrate o inicia sesión">
-                <p class="passwordError">
-                    <?= isset($err) ? $err : ''; ?>
-                </p>
+            <label for="username">Nombre de usuario</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password">
+            <input type="submit" value="Regístrate o inicia sesión">
         </form>
         <?php } ?>
     </div>

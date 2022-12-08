@@ -53,6 +53,9 @@
         color: #9755ba;
     }
 }
+.modal-content {
+    z-index: 999;
+}
 header {
     position: fixed;
     top: 0;
