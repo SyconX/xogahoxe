@@ -18,7 +18,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 </head>
 
 <body>
-    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
+    <header class="cont-header flex">
+        <form action=<?= CONTROLLERS_PATH . "/Finder.php" ?> method="post" class="finder flex">
+            <input type="hidden" name="shopFinder">
+            <input type="text" name="search" id="search" placeholder=" Buscar...">
+        </form>
+        <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
+    </header>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideShop.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
 
@@ -63,11 +69,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 
     <?php } ?>
     <main>
+        <?php
+        if ($productResponse === false) { ?>
+        <p class="notFound">No se han encontrado productos</p>
+        <?php } else { ?>
         <div class="grid-container">
-            <?php
-            foreach ($productResponse as $p) {
+            <?php foreach ($productResponse as $p) {
                 include(BASE_PATH . VIEWS_PATH . "/components/product.php");
             }
+        }
             ?>
         </div>
     </main>

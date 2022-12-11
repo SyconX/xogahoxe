@@ -52,7 +52,6 @@ define(
         ':date',
         ':max_players',
         ':description',
-        ':info',
         ':players',
         ':owner'
     )

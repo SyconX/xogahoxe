@@ -19,6 +19,25 @@ class Read extends ConnectionDB
         return $this->pdo->prepare($sql);
     }
 
+    public function querySearch($table, $columns, $search)
+    {
+        $this->connect();
+        $where = "";
+        for ($i = 0; $i < count($columns); $i++) {
+            if ($i == (count($columns) - 1)) {
+                $where .= "(" . $columns[$i] . " LIKE :search" . ($i + 1) . ")";
+            } else {
+                $where .= "(" . $columns[$i] . " LIKE :search" . ($i + 1) . ") OR ";
+            }
+        }
+        $sql = "SELECT * FROM $table WHERE " . $where;
+        $stmt = $this->pdo->prepare($sql);
+        for ($i = 1; $i <= count($columns); $i++) {
+            $stmt->bindParam(':search' . $i, $search);
+        }
+        return $stmt;
+    }
+
     public function response($stmt)
     {
         try {

@@ -9,18 +9,21 @@ body {
         position: absolute;
         top: 0;
     }
+    .modal {
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            > label:not(:first-of-type) {
+                margin-top: 10px;
+            }
+        }
+    }
     main {
         min-height: calc(100vh - 216px);
         margin-top: 88px;
 
         > .btn:first-of-type {
             margin-left: 20px;
-        }
-        .modal {
-            .modal-body {
-                display: flex;
-                flex-direction: column;
-            }
         }
         .event {
             position: relative;
@@ -32,13 +35,15 @@ body {
                 overflow: hidden;
 
                 .row {
-                    > *:first-child {
+                    .card-img-top {
                         overflow: hidden;
+                        width: 310px;
 
                         img {
                             height: 220px;
                             width: 310px;
                             object-fit: cover;
+                            transition: transform 0.3s;
 
                             &:hover {
                                 transform: scale(1.2);

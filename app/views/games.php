@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/header.php'); ?>
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
     <main>
     </main>

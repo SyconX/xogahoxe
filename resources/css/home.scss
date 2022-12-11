@@ -65,7 +65,7 @@
                 letter-spacing: 12px;
 
                 &:hover {
-                    background-color: #9755ba;
+                    background-color: var(--bs-purple);
                 }
             }
         }
@@ -80,7 +80,6 @@
         text-decoration: none;
 
         &:hover {
-            color: #aa43ac;
             transform: scale(2, 2);
         }
 

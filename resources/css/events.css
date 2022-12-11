@@ -9,16 +9,19 @@ body #top {
   position: absolute;
   top: 0;
 }
+body .modal .modal-body {
+  display: flex;
+  flex-direction: column;
+}
+body .modal .modal-body > label:not(:first-of-type) {
+  margin-top: 10px;
+}
 body main {
   min-height: calc(100vh - 216px);
   margin-top: 88px;
 }
 body main > .btn:first-of-type {
   margin-left: 20px;
-}
-body main .modal .modal-body {
-  display: flex;
-  flex-direction: column;
 }
 body main .event {
   position: relative;
@@ -29,16 +32,18 @@ body main .event .card {
   width: 65vw;
   overflow: hidden;
 }
-body main .event .card .row > *:first-child {
+body main .event .card .row .card-img-top {
   overflow: hidden;
+  width: 310px;
 }
-body main .event .card .row > *:first-child img {
+body main .event .card .row .card-img-top img {
   height: 220px;
   width: 310px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s;
 }
-body main .event .card .row > *:first-child img:hover {
+body main .event .card .row .card-img-top img:hover {
   transform: scale(1.2);
 }
 body main .event .card .card-body {

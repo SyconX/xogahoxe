@@ -1,9 +1,12 @@
 <div class="card">
-    <img src=<?= IMAGES_PATH . "/background3.jpg" ?> class=" card-img-top" alt="">
+    <div class="card-img-top">
+        <img src=<?= IMAGES_PATH . "/background3.jpg" ?>
+        alt="">
+    </div>
     <div class="card-body">
         <h4 class="card-price">
             <?= $p->price ?>€
-                <?= $p->delivery == 'Envío a domicilio' ? '<i class="icon fa-solid fa-truck"></i>' : '' ?>
+                <?= $p->delivery=='Envío a domicilio' ? '<i class="icon fa-solid fa-truck"></i>' : '' ?>
         </h4>
         <h5 class="card-title">
             <?= $p->name ?>

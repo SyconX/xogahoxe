@@ -1,7 +1,7 @@
 <div class="event" id="<?= $e->id ?>">
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 card-img-top">
                 <img src=<?= IMAGES_PATH . "/background3.jpg" ?>
                 class="" alt="...">
             </div>
