@@ -13,7 +13,7 @@ if (trim($_POST['username']) == "") {
     // Consulta usuario BD
     $user = $userRead->response(
         $userRead->queryAllWhere(
-            USER_TABLE,
+        USER_TABLE,
             'username',
             'LIKE',
             trim($_POST['username'])
@@ -56,12 +56,3 @@ if (trim($_POST['username']) == "") {
         }
     }
 }
-
-
-/** Generar datos y cargar vista. En la vista se usan los datos.
- * Se pueden encadenar. En este caso se llama a eventos
- * que a su ver llama a tienda, que es la vista que usa el array.
- * 
- * $user = array ('username' => $_POST['username'], 'lastname' => 'fraga');
- * include_once BASE_PATH . VIEWS_PATH . '/events.php';
- */

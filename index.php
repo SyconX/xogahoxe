@@ -23,7 +23,7 @@ switch ($request) {
         require __DIR__ . CONTROLLERS_PATH . '/Events.php';
         break;
     case '/juegos':
-        require __DIR__ . VIEWS_PATH . '/games.php';
+        require __DIR__ . CONTROLLERS_PATH . '/Games.php';
         break;
     case '/perfil':
         require __DIR__ . VIEWS_PATH . '/profile.php';

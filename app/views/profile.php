@@ -13,7 +13,9 @@
 </head>
 
 <body>
-    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
+    <header class="cont-header flex">
+        <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
+    </header>
     <main>
 
         <div class="user-data">

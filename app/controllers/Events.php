@@ -10,10 +10,10 @@ if ($_POST['newEvent']) {
         $_POST['date'],
         $_POST['max_players'],
         $_POST['description'],
+        // Tanto para jugadores como owner, recoger
+        // el usuario logueado en ese momento
         serialize(array($_SESSION['userLogin']->username)),
-            // Tanto para jugadores como owner, recoger
-            $_SESSION['userLogin']->username, // el usuario logueado en ese momento
-
+            $_SESSION['userLogin']->username,
     );
     $events = $eventCreate->query(EVENT_TABLE, EVENT_TABLE_COLS, $data);
 
@@ -62,11 +62,3 @@ $eventResponse = $eventRead->response(
 );
 
 include_once BASE_PATH . VIEWS_PATH . '/events.php';
-
-/** Generar datos y cargar vista. En la vista se usan los datos.
- * Se pueden encadenar. En este caso se llama a eventos
- * que a su ver llama a tienda, que es la vista que usa el array.
- * 
- * $user = array ('username' => $_POST['username'], 'lastname' => 'fraga');
- * include_once BASE_PATH . VIEWS_PATH . '/events.php';
- */

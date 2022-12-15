@@ -11,12 +11,10 @@ if ($_POST['productName'] && $_POST['productName'] != "") {
         $_POST['address'],
         $_POST['city'],
         $_POST['description'],
-        '',
         // Tanto para jugadores como owner, recoger
-        // el usuario logueado en ese momento $_SESSION['user']
-        'javier',
-        'javier',
-
+        // el usuario logueado en ese momento
+        serialize(array($_SESSION['userLogin']->username)),
+            $_SESSION['userLogin']->username,
     );
     $products = $productCreate->query(PRODUCT_TABLE, PRODUCT_TABLE_COLS, $data);
 }

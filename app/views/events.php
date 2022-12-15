@@ -28,7 +28,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
     <header class="cont-header flex">
         <form action=<?= CONTROLLERS_PATH . "/Finder.php" ?> method="post" class="finder flex">
             <input type="hidden" name="eventFinder">
-            <input type="text" name="search" id="search" placeholder=" Buscar...">
+            <input type="text" name="search" id="search" placeholder="Buscar por nombre o ciudad">
         </form>
         <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
     </header>
