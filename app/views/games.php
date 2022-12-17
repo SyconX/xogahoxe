@@ -76,7 +76,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
             </p>
             <p class="players">
                 <span>Jugadores</span>
-                <?= $gameInfo['minplayers'] . ' / ' . $gameInfo['maxplayers'] ?>
+                <?= $gameInfo['minplayers'] . ' - ' . $gameInfo['maxplayers'] ?>
             </p>
             <p class="playtime">
                 <span>Tiempo de partida</span>
