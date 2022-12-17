@@ -99,7 +99,7 @@ aside .filters form button[type=submit] {
 
 main {
   min-height: calc(100vh - 216px);
-  margin: 138px 40px 0 40px;
+  margin: 158px 40px 0 40px;
 }
 main .grid-container {
   display: grid;

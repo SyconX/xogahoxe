@@ -12,7 +12,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
     <?= BOOTSTRAP_LINK ?>
         <link rel="stylesheet" href=<?= CSS_PATH . "/shop.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/header.css" ?>>
-        <link rel="stylesheet" href=<?= CSS_PATH . "/aside.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/userModal.css" ?>>
         <link rel="stylesheet" href=<?= CSS_PATH . "/footer.css" ?>>
 </head>
@@ -25,6 +24,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         </form>
         <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
     </header>
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideArrow.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideShop.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
 

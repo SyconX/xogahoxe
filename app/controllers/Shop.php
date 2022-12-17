@@ -17,6 +17,9 @@ if ($_POST['productName'] && $_POST['productName'] != "") {
             $_SESSION['userLogin']->username,
     );
     $products = $productCreate->query(PRODUCT_TABLE, PRODUCT_TABLE_COLS, $data);
+} else if ($_POST['deleteProduct']) {
+    $productDelete = new Delete();
+    $productDelete->query(PRODUCT_TABLE, $_POST['productID']);
 }
 
 if (isset($_POST['ciudad']) || isset($_POST['tipoEntrega']) || ($_POST['precio'][0] != "" && $_POST['precio'][1] != "")) {

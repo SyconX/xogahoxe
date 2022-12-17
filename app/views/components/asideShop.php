@@ -32,5 +32,5 @@
             <button type="submit" class="btn btn-outline-dark">Filtrar</button>
         </form>
     </div>
-    <a href="#top" rel="noopener noreferrer"><i class="fa-sharp fa-solid fa-arrow-up"></i></a>
+    <!-- <a href="#top" rel="noopener noreferrer"><i class="fa-sharp fa-solid fa-arrow-up"></i></a> -->
 </aside>

@@ -14,8 +14,13 @@
         <p class="card-description">
             <?= $p->description ?>
         </p>
-        <input type="hidden" name="idProduct" value="<?= $p->id ?>">
-        <?php if (isset($_SESSION['userLogin'])) { ?>
+        <?php if ($_SESSION['userLogin']->username == $p->owner) { ?>
+        <form action=<?= CONTROLLERS_PATH . "/Shop.php" ?> method="post">
+            <input type="hidden" name="productID" value="<?= $p->id ?>">
+            <input type="hidden" name="deleteProduct" value="deleteProduct">
+            <input class="btn btn-danger" type="submit" value="Eliminar" />
+        </form>
+        <?php } else if (isset($_SESSION['userLogin'])) { ?>
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#errorModal">
             Comprar
         </button>
