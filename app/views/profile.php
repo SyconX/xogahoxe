@@ -33,17 +33,15 @@
                 <label for="last_name">Apellidos</label>
                 <input type="text" name="last_name" id="last_name" value="<?= $_SESSION['userLogin']->last_name ?>"
                     required>
-                <label for="age">Edad</label>
-                <input type="number" name="age" id="age" value="<?= $_SESSION['userLogin']->age ?>">
                 <label for="city">Ciudad</label>
                 <input type="text" name="city" id="city" value="<?= $_SESSION['userLogin']->city ?>">
                 <label for="phone">Teléfono</label>
                 <input type="number" name="phone" id="phone" value="<?= $_SESSION['userLogin']->phone ?>">
-                <input type="submit" class="btn btn-outline-dark" value="Modificar">
+                <input type="submit" class="btn btn-light" value="Modificar">
             </form>
             <form action="<?= CONTROLLERS_PATH . "/Login.php" ?>" method="post">
                 <input type="hidden" name="logout" value="logout">
-                <input type="submit" class="btn btn-outline-danger" value="Cerrar sesión">
+                <input type="submit" class="btn btn-danger" value="Cerrar sesión">
             </form>
         </div>
     </main>
