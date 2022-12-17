@@ -80,8 +80,7 @@ body {
                     }
                 }
                 .ciudades > label,
-                .fechas > label,
-                .plazasDisponibles > label {
+                .fechas > label {
                     font-weight: 700;
                 }
                 .btn {
@@ -99,6 +98,10 @@ body {
         width: 70vw;
         position: relative;
 
+        .notFound {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
         > .btn:first-of-type {
             margin-left: 20px;
         }

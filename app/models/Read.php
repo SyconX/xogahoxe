@@ -12,10 +12,10 @@ class Read extends ConnectionDB
         return $stmt;
     }
 
-    public function queryAll($table, $select = "*")
+    public function queryAll($table, $select = '*', $where = '')
     {
         $this->connect();
-        $sql = "SELECT " . $select . " FROM $table";
+        $sql = "SELECT $select FROM $table" . $where;
         return $this->pdo->prepare($sql);
     }
 

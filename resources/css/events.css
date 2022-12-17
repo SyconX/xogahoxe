@@ -81,8 +81,7 @@ body aside .filters form > div > div > input {
   margin-left: 6px;
 }
 body aside .filters form .ciudades > label,
-body aside .filters form .fechas > label,
-body aside .filters form .plazasDisponibles > label {
+body aside .filters form .fechas > label {
   font-weight: 700;
 }
 body aside .filters form .btn {
@@ -96,6 +95,10 @@ body main {
   margin-top: 88px;
   width: 70vw;
   position: relative;
+}
+body main .notFound {
+  margin-left: 20px;
+  margin-top: 20px;
 }
 body main > .btn:first-of-type {
   margin-left: 20px;

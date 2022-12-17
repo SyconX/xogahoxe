@@ -58,7 +58,7 @@ aside {
   padding: 0 40px;
   position: fixed;
   top: 64px;
-  height: 54px;
+  height: 86px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -67,22 +67,34 @@ aside {
   background-color: rgba(255, 255, 255, 0.9);
 }
 aside .filters {
+  flex-basis: 80%;
   margin-left: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-items: center;
 }
 aside .filters form {
+  margin-bottom: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-aside .filters form > * > label {
-  margin-right: 15px;
+aside .filters form > * {
+  margin-left: auto;
 }
-aside .filters form > * .slider {
-  height: 27px;
+aside .filters form > * > label {
+  margin-right: 6px;
+}
+aside .filters form > * > input,
+aside .filters form > * > select {
+  height: 34px;
+}
+aside .filters form .precios input {
+  width: 50px;
+}
+aside .filters form button[type=submit] {
+  margin-left: auto;
 }
 
 main {

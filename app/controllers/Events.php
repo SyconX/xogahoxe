@@ -24,7 +24,7 @@ if ($_POST['newEvent']) {
     $openModal = "<script>
         $(() => {
             $('#newEventModal').modal('show');
-         });
+        });
     </script>";
 } else if ($_POST['editEvent']) {
     $data = array(
@@ -55,14 +55,41 @@ if ($_POST['newEvent']) {
     unset($_SESSION['playersEvent']['' . $_POST['eventID'] . ''][$position]);
     $response = $eventLeave->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
     $_SESSION['playersEvent']['' . $_POST['eventID'] . ''] = "";
-} else if ($_POST['filter']) {
+}
 
+if (isset($_POST['ciudad']) || ($_POST['fecha'][0] != "" && $_POST['fecha'][1] != "")) {
+
+    $cityFilter = $_POST['ciudad'];
+    $dateFilter = $_POST['fecha'];
+    $date1 = date_format(new DateTime($dateFilter[0]), "'Y-m-d H:i:s'");
+    $date2 = date_format(new DateTime($dateFilter[1]), "'Y-m-d H:i:s'");
+
+    $where = " WHERE ";
+
+    if ($cityFilter != null && count($cityFilter) > 0) {
+        $whereCity = "(";
+        for ($i = 0; $i < count($cityFilter); $i++) {
+            if ($i == count($cityFilter) - 1) {
+                $whereCity .= "city LIKE '%$cityFilter[$i]%'";
+            } else {
+                $whereCity .= "city LIKE '%$cityFilter[$i]%' OR ";
+            }
+        }
+        $whereCity .= ")";
+    }
+
+    if ($_POST['fecha'][0] != "" && $_POST['fecha'][1] != "") {
+        $where .= (isset($whereCity)) ? $whereCity . " AND " : "";
+        $where .= "(date BETWEEN $date1 AND $date2)";
+    } else {
+        $where .= $whereCity;
+    }
 }
 
 $eventRead = new Read();
 // Consulta usuario BD
 $eventResponse = $eventRead->response(
-    $eventRead->queryAll(EVENT_TABLE)
+    $eventRead->queryAll(EVENT_TABLE, "*", $where)
 );
 
 $ciudadesRead = new Read();

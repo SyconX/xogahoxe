@@ -1,4 +1,4 @@
-<?
+<?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
 ?>
 <!DOCTYPE html>
@@ -94,10 +94,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         <?php } else { ?>
         <div class="grid-container">
             <?php foreach ($eventResponse as $e) {
-                    include(BASE_PATH . VIEWS_PATH . "/components/event.php");
-                }
+                include(BASE_PATH . VIEWS_PATH . "/components/event.php");
             }
-                ?>
+        }
+            ?>
         </div>
     </main>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/aside.php'); ?>

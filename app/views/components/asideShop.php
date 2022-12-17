@@ -24,8 +24,9 @@
                 </select>
             </div>
             <div class="precios">
-                <label for="precio">Precio</label>
-                <input name="precio" type="range" min="1" max="12" value="1" class="slider">
+                <label for="precio[]">Rango de precios</label>
+                <input name="precio[]" type="number" min="1" placeholder="MIN">
+                <input name="precio[]" type="number" min="1" placeholder="MAX">
             </div>
             <input type="hidden" name="filter" value="filter">
             <button type="submit" class="btn btn-outline-dark">Filtrar</button>

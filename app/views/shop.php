@@ -1,5 +1,6 @@
-<?
+<?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
+var_dump($prueba);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +57,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
                                 <option value="Buen estado">Buen estado</option>
                                 <option value="Usado">Usado</option>
                             </select>
-                            
+
                             <select type="select" name="delivery" id="delivery" required>
                                 <option value="Entrega en mano">Entrega en mano</option>
                                 <option value="Envío a domicilio">Envío a domicilio</option>
