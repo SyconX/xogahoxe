@@ -1,6 +1,5 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
-var_dump($prueba);
 ?>
 <!DOCTYPE html>
 <html lang="en">

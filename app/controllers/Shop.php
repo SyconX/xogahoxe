@@ -38,7 +38,6 @@ if (isset($_POST['ciudad']) || isset($_POST['tipoEntrega']) || ($_POST['precio']
         $where .= (isset($cityFilter) || isset($deliveryFilter)) ? " AND " : "";
         $where .= "(price BETWEEN $priceFilter[0] AND $priceFilter[1])";
     }
-    $prueba = $where;
 }
 
 $productRead = new Read();
