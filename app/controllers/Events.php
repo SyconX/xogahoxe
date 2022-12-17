@@ -44,8 +44,10 @@ if ($_POST['newEvent']) {
     $eventDelete->query(EVENT_TABLE, $_POST['eventID']);
 } else if ($_POST['joinEvent']) {
     $eventJoin = new Update();
-    array_push($_SESSION['playersEvent']['' . $_POST['eventID'] . ''], $_SESSION['userLogin']->username);
-    $response = $eventJoin->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
+    if (array_search($_SESSION['userLogin']->username, $_SESSION['playersEvent']['' . $_POST['eventID'] . '']) === false) {
+        array_push($_SESSION['playersEvent']['' . $_POST['eventID'] . ''], $_SESSION['userLogin']->username);
+        $response = $eventJoin->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
+    }
     $_SESSION['playersEvent']['' . $_POST['eventID'] . ''] = "";
 } else if ($_POST['leaveEvent']) {
     $eventLeave = new Update();

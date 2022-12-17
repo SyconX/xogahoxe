@@ -1,3 +1,18 @@
+@import "utilities.scss";
+
+// Quitar flechas al input number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 html,
 body {
     margin: 0;
@@ -13,6 +28,10 @@ body {
         .modal-body {
             display: flex;
             flex-direction: column;
+
+            input {
+                height: 40px;
+            }
             > label:not(:first-of-type) {
                 margin-top: 10px;
             }
@@ -49,8 +68,15 @@ body {
                     display: flex;
                     flex-direction: column;
 
-                    > * {
-                        margin-bottom: 12px;
+                    > label {
+                        margin-bottom: 6px;
+                    }
+                    > div {
+                        margin-left: 6px;
+                        border-left: 1px #777 solid;
+                        > input {
+                            margin-left: 6px;
+                        }
                     }
                 }
                 .ciudades > label,
@@ -74,7 +100,7 @@ body {
         position: relative;
 
         > .btn:first-of-type {
-            margin-left: 40px;
+            margin-left: 20px;
         }
         .event {
             position: relative;
@@ -166,6 +192,13 @@ body {
                 position: absolute;
                 bottom: -12px;
                 right: -34px;
+            }
+            .btn-outline-dark {
+                background-color: white;
+
+                &:hover {
+                    background-color: black;
+                }
             }
         }
     }

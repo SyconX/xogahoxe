@@ -85,20 +85,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
     </div>
 
     <main>
-        <?php if (isset($_SESSION['userLogin'])) { ?>
-        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#newEventModal">
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#newEventModal"
+            style="visibility: <?=(isset($_SESSION['userLogin'])) ? "visible" : "hidden" ?>;">
             Nueva partida
         </button>
-        <?php }
-        if ($eventResponse === false) { ?>
+        <?php if ($eventResponse === false) { ?>
         <p class="notFound">No se han encontrado eventos</p>
         <?php } else { ?>
         <div class="grid-container">
             <?php foreach ($eventResponse as $e) {
-                include(BASE_PATH . VIEWS_PATH . "/components/event.php");
+                    include(BASE_PATH . VIEWS_PATH . "/components/event.php");
+                }
             }
-        }
-            ?>
+                ?>
         </div>
     </main>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/aside.php'); ?>

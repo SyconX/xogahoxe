@@ -45,11 +45,23 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
                         <label for="productName">Juego</label>
                         <input type="text" name="productName" id="productName" required>
                         <label for="price">Precio</label>
-                        <input type="number" step="0.01" name="price" id="price" required>
-                        <label for="status">Estado del producto</label>
-                        <input type="text" name="status" id="status" required>
-                        <label for="delivery">Método entrega</label>
-                        <input type="text" name="delivery" id="delivery" required>
+                        <input type="number" step="0.1" min="1" name="price" id="price" required>
+                        <div>
+                            <label for="status">Estado del producto</label>
+                            <label for="delivery">Método entrega</label>
+                        </div>
+                        <div>
+                            <select type="select" name="status" id="status" required>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Buen estado">Buen estado</option>
+                                <option value="Usado">Usado</option>
+                            </select>
+                            
+                            <select type="select" name="delivery" id="delivery" required>
+                                <option value="Entrega en mano">Entrega en mano</option>
+                                <option value="Envío a domicilio">Envío a domicilio</option>
+                            </select>
+                        </div>
                         <label for="address">Dirección</label>
                         <input type="text" name="address" id="address" required>
                         <label for="city">Ciudad</label>
@@ -67,6 +79,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         </div>
     </div>
 
+    <div class="modal fade" id="errorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4>Funcionalidad en construcción.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php } ?>
     <main>
         <?php

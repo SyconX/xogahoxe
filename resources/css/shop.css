@@ -6,9 +6,52 @@ html {
   color: #777;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .modal .modal-body {
   display: flex;
   flex-direction: column;
+}
+.modal .modal-body input,
+.modal .modal-body select {
+  height: 40px;
+}
+.modal .modal-body > label:not(:first-of-type) {
+  margin-top: 10px;
+}
+.modal .modal-body > div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.modal .modal-body > div:nth-of-type(1) {
+  margin-top: 10px;
+}
+.modal .modal-body > div > * {
+  flex-basis: 40%;
+}
+.modal .modal-body > div > :nth-of-type(2) {
+  margin-left: 40px;
+}
+
+#errorModal .modal-body {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#errorModal .modal-body button {
+  align-self: flex-end;
 }
 
 aside {

@@ -1,3 +1,23 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 html,
 body {
   margin: 0;
@@ -12,6 +32,9 @@ body #top {
 body .modal .modal-body {
   display: flex;
   flex-direction: column;
+}
+body .modal .modal-body input {
+  height: 40px;
 }
 body .modal .modal-body > label:not(:first-of-type) {
   margin-top: 10px;
@@ -47,8 +70,15 @@ body aside .filters form > div {
   display: flex;
   flex-direction: column;
 }
-body aside .filters form > div > * {
-  margin-bottom: 12px;
+body aside .filters form > div > label {
+  margin-bottom: 6px;
+}
+body aside .filters form > div > div {
+  margin-left: 6px;
+  border-left: 1px #777 solid;
+}
+body aside .filters form > div > div > input {
+  margin-left: 6px;
 }
 body aside .filters form .ciudades > label,
 body aside .filters form .fechas > label,
@@ -68,7 +98,7 @@ body main {
   position: relative;
 }
 body main > .btn:first-of-type {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 body main .event {
   position: relative;
@@ -154,4 +184,10 @@ body main .event .btn-danger {
   position: absolute;
   bottom: -12px;
   right: -34px;
+}
+body main .event .btn-outline-dark {
+  background-color: white;
+}
+body main .event .btn-outline-dark:hover {
+  background-color: black;
 }/*# sourceMappingURL=events.css.map */

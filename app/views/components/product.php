@@ -6,7 +6,7 @@
     <div class="card-body">
         <h4 class="card-price">
             <?= $p->price ?>€
-                <?= $p->delivery=='Envío a domicilio' ? '<i class="icon fa-solid fa-truck"></i>' : '' ?>
+                <?= $p->delivery == 'Envío a domicilio' ? '<i class="icon fa-solid fa-truck"></i>' : '' ?>
         </h4>
         <h5 class="card-title">
             <?= $p->name ?>
@@ -15,6 +15,10 @@
             <?= $p->description ?>
         </p>
         <input type="hidden" name="idProduct" value="<?= $p->id ?>">
-        <a href="#" class="btn btn-dark">Comprar</a>
+        <?php if (isset($_SESSION['userLogin'])) { ?>
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#errorModal">
+            Comprar
+        </button>
+        <?php } ?>
     </div>
 </div>

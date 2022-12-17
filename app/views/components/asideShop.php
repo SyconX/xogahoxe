@@ -19,7 +19,7 @@
             <div class="entrega">
                 <label for="tipoEntrega">Tipo de entrega</label>
                 <select type="select" name="tipoEntrega">
-                    <option value="En mano">En mano</option>
+                    <option value="Entrega en mano">Entrega en mano</option>
                     <option value="Envío a domicilio">Envío a domicilio</option>
                 </select>
             </div>

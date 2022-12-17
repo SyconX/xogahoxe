@@ -1,9 +1,55 @@
 @import "utilities.scss";
 
+// Quitar flechas al input number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 .modal {
     .modal-body {
         display: flex;
         flex-direction: column;
+
+        input,
+        select {
+            height: 40px;
+        }
+        > label:not(:first-of-type) {
+            margin-top: 10px;
+        }
+        > div {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            &:nth-of-type(1) {
+                margin-top: 10px;
+            }
+            > * {
+                flex-basis: 40%;
+            }
+            > :nth-of-type(2) {
+                margin-left: 40px;
+            }
+        }
+    }
+}
+#errorModal {
+    .modal-body {
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        button {
+            align-self: flex-end;
+        }
     }
 }
 aside {
