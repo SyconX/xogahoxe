@@ -39,7 +39,6 @@ define(
         ':last_name',
         ':city',
         ':phone',
-        ':age',
         ':image'
     )
 );

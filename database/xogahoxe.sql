@@ -36,7 +36,6 @@ CREATE TABLE `user` (
   `last_name` varchar(60) NOT NULL,
   `city` varchar(60),
   `phone` int(12),
-  `age` int(3),
   `image` varchar(255),
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
