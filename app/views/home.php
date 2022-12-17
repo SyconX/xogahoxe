@@ -58,11 +58,11 @@
             lacinia, maximus nibh ac, tincidunt sapien. Curabitur sodales purus dolor, id fringilla dui feugiat a.
         </h5>
     </div>
-    <p id='loginMsg'>
-        <?= $_SESSION['loginMsg'] ?? "" ?>
-    </p>
     <?php if (!isset($_SESSION['userLogin'])) { ?>
     <div class="container" id="formLogin">
+        <p class='loginMsg<?= $_SESSION['loginMsg']['class'] ?? "" ?>'>
+            <?= $_SESSION['loginMsg']['msg'] ?? "" ?>
+        </p>
         <form action=<?= CONTROLLERS_PATH . "/Login.php" ?> method="post">
             <label for="username">Nombre de usuario</label>
             <input type="text" name="username" id="username">

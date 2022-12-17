@@ -20,24 +20,39 @@ if (trim($_POST['username']) == "") {
         )
     );
     // Usuario no existe en BD y se pide registro
-    if ($user === false && isset($_POST['newUser'])) {
-        // Crea usuario
-        $userCreate = new Create();
-        $data = array(
-            $_POST['email'],
-            $_POST['username'],
-            $_POST['password'],
-            $_POST['name'],
-            $_POST['last_name'],
-        );
-        $result = $userCreate->query(USER_TABLE, USER_TABLE_COLS, $data);
+    if (isset($_POST['newUser'])) {
 
-        if ($result == 1) {
-            $_SESSION['loginMsg'] = "Usuario creado con éxito";
+        if ($user === false) {
+            // Crea usuario
+            $userCreate = new Create();
+            $data = array(
+                $_POST['email'],
+                $_POST['username'],
+                $_POST['password'],
+                $_POST['name'],
+                $_POST['last_name'],
+            );
+            $result = $userCreate->query(USER_TABLE, USER_TABLE_COLS, $data);
+
+            if ($result == 1) {
+                $_SESSION['loginMsg'] = [
+                    "msg" => "¡Usuario creado con éxito!",
+                    "class" => "-success"
+                ];
+            } else {
+                $_SESSION['loginMsg'] = [
+                    "msg" => $result,
+                    "class" => "-error"
+                ];
+            }
         } else {
-            $_SESSION['loginMsg'] = $result;
+            $_SESSION['loginMsg'] = [
+                "msg" => "El usuario ya existe.",
+                "class" => "-error"
+            ];
         }
         header('Location: /inicio#formLogin');
+
         // Usuario no existe en BD
     } else if ($user === false) {
         include_once(BASE_PATH . VIEWS_PATH . '/components/newUser.php');
@@ -50,8 +65,10 @@ if (trim($_POST['username']) == "") {
             $_SESSION['userLogin'] = $user[0];
             include(BASE_PATH . CONTROLLERS_PATH . '/Events.php');
         } else {
-
-            $_SESSION['loginMsg'] = "Contraseña incorrecta";
+            $_SESSION['loginMsg'] = [
+                "msg" => "Contraseña incorrecta.",
+                "class" => "-error"
+            ];
             header('Location: /inicio#formLogin');
         }
     }

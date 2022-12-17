@@ -103,11 +103,23 @@
 .container {
     position: relative;
     display: flex;
+    flex-direction: column;
 
-    > * {
+    form {
         margin: auto;
         padding: 20px;
         flex-basis: 50%;
+    }
+    p {
+        text-align: center;
+        font-weight: 700;
+
+        &.loginMsg-error {
+            color: #e04444;
+        }
+        &.loginMsg-success {
+            color: #45b239;
+        }
     }
 
     form {

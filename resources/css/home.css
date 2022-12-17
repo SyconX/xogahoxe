@@ -89,11 +89,22 @@ html {
 .container {
   position: relative;
   display: flex;
+  flex-direction: column;
 }
-.container > * {
+.container form {
   margin: auto;
   padding: 20px;
   flex-basis: 50%;
+}
+.container p {
+  text-align: center;
+  font-weight: 700;
+}
+.container p.loginMsg-error {
+  color: #e04444;
+}
+.container p.loginMsg-success {
+  color: #45b239;
 }
 .container form {
   display: flex;
