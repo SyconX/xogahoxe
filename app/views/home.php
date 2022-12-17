@@ -68,7 +68,7 @@
             <input type="text" name="username" id="username">
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password">
-            <input type="submit" value="Regístrate o inicia sesión">
+            <input type="submit" class="btn btn-outline-dark" value="Regístrate o inicia sesión">
         </form>
         <?php } ?>
     </div>
@@ -77,3 +77,4 @@
 </body>
 
 </html>
+<?php $_SESSION['loginMsg'] = "" ?>

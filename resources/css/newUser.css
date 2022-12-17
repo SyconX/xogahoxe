@@ -6,18 +6,59 @@ html {
   color: #777;
 }
 
-body {
-  min-height: 90vh;
-  display: flex;
-}
-body form {
+body .parallax {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.65;
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/resources/images/background5.jpg");
+  /* Set a specific height */
+  min-height: 100%;
 }
-body form > input {
-  margin-bottom: 10px;
+body .parallax .mainTitle {
+  font: 400 2em/1.8 "Lato", sans-serif;
+  color: white;
+  margin-top: 6px;
+  text-align: center;
+  border-bottom: 1px #777 solid;
 }
-body form > * {
+body .parallax .returnTo {
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+body .parallax .returnTo i {
+  height: 24px;
+  width: 24px;
+}
+body .parallax .returnTo:hover {
+  color: var(--bs-purple);
+}
+body .parallax form {
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: white;
+  color: w;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto 40px auto;
+}
+body .parallax form > * {
   width: 320px;
+}
+body .parallax form input {
+  height: 40px;
+}
+body .parallax form input:not([type=submit]) {
+  margin-bottom: 20px;
+}
+body .parallax form input[type=submit] {
+  margin-top: 20px;
 }/*# sourceMappingURL=newUser.css.map */

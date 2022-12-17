@@ -1,19 +1,69 @@
 @import "utilities.scss";
 
 body {
-    min-height: 90vh;
-    display: flex;
-
-    form {
+    .parallax {
         display: flex;
         flex-direction: column;
-        margin: auto;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.65;
 
-        > input {
-            margin-bottom: 10px;
+        /* The image used */
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.7)
+            ),
+            url("/resources/images/background5.jpg");
+
+        /* Set a specific height */
+        min-height: 100%;
+
+        .mainTitle {
+            font: 400 2em/1.8 "Lato", sans-serif;
+            color: white;
+            margin-top: 6px;
+            text-align: center;
+            border-bottom: 1px #777 solid;
         }
-        > * {
-            width: 320px;
+        .returnTo {
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: white;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-weight: 700;
+            text-decoration: none;
+
+            i {
+                height: 24px;
+                width: 24px;
+            }
+            &:hover {
+                color: var(--bs-purple);
+            }
+        }
+        form {
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: white;
+            color: w;
+            display: flex;
+            flex-direction: column;
+            margin: 40px auto 40px auto;
+
+            > * {
+                width: 320px;
+            }
+            input {
+                height: 40px;
+            }
+            input:not([type="submit"]) {
+                margin-bottom: 20px;
+            }
+            input[type="submit"] {
+                margin-top: 20px;
+            }
         }
     }
 }
