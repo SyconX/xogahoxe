@@ -6,6 +6,41 @@
         flex-direction: column;
     }
 }
+aside {
+    padding: 0 40px;
+    position: fixed;
+    top: 64px;
+    height: 54px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba($color: white, $alpha: 0.9);
+
+    .filters {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            > * {
+                > label {
+                    margin-right: 15px;
+                }
+                .slider {
+                    height: 27px;
+                }
+            }
+        }
+    }
+}
 main {
     min-height: calc(100vh - 216px);
     margin: 138px 40px 0 40px;

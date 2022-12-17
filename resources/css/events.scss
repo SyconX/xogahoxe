@@ -18,9 +18,60 @@ body {
             }
         }
     }
+    aside {
+        width: 20vw;
+        position: absolute;
+        top: 162px;
+        right: 20px;
+
+        .filters {
+            width: 20vw;
+
+            h5 {
+                text-align: center;
+                margin-bottom: 42px;
+            }
+            form {
+                padding: 12px;
+                border: 1px #ced4da solid;
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+
+                > * {
+                    display: block;
+                    margin-bottom: 20px;
+                }
+                > div {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+
+                    > * {
+                        margin-bottom: 12px;
+                    }
+                }
+                .ciudades > label,
+                .fechas > label,
+                .plazasDisponibles > label {
+                    font-weight: 700;
+                }
+                .btn {
+                    width: 80px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
     main {
         min-height: calc(100vh - 216px);
         margin-top: 88px;
+        width: 70vw;
+        position: relative;
 
         > .btn:first-of-type {
             margin-left: 40px;
@@ -31,7 +82,7 @@ body {
 
             .card {
                 height: 220px;
-                width: 65vw;
+                width: 100%;
                 overflow: hidden;
 
                 .row {
@@ -108,13 +159,13 @@ body {
                 width: 70px;
                 position: absolute;
                 bottom: 18px;
-                right: 410px;
+                right: -34px;
             }
             .btn-danger {
                 width: 70px;
                 position: absolute;
                 bottom: -12px;
-                right: 410px;
+                right: -34px;
             }
         }
     }

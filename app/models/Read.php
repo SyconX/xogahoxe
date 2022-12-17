@@ -12,14 +12,14 @@ class Read extends ConnectionDB
         return $stmt;
     }
 
-    public function queryAll($table)
+    public function queryAll($table, $select = "*")
     {
         $this->connect();
-        $sql = "SELECT * FROM $table";
+        $sql = "SELECT " . $select . " FROM $table";
         return $this->pdo->prepare($sql);
     }
 
-    public function querySearch($table, $columns, $search)
+    public function querySearch($table, $columns, $search, $select = "*")
     {
         $this->connect();
         $where = "";
@@ -30,7 +30,7 @@ class Read extends ConnectionDB
                 $where .= "(" . $columns[$i] . " LIKE :search" . ($i + 1) . ") OR ";
             }
         }
-        $sql = "SELECT * FROM $table WHERE " . $where;
+        $sql = "SELECT " . $select . " FROM $table WHERE " . $where;
         $stmt = $this->pdo->prepare($sql);
         for ($i = 1; $i <= count($columns); $i++) {
             $stmt->bindParam(':search' . $i, $search);

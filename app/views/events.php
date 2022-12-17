@@ -33,6 +33,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
         <?php include_once(BASE_PATH . VIEWS_PATH . '/components/nav.php'); ?>
     </header>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideArrow.php'); ?>
+    <?php include_once(BASE_PATH . VIEWS_PATH . '/components/asideEvents.php'); ?>
     <?php include_once(BASE_PATH . VIEWS_PATH . '/components/userModal.php'); ?>
 
     <!-- New event Modal -->

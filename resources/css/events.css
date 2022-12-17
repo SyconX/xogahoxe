@@ -16,9 +16,56 @@ body .modal .modal-body {
 body .modal .modal-body > label:not(:first-of-type) {
   margin-top: 10px;
 }
+body aside {
+  width: 20vw;
+  position: absolute;
+  top: 162px;
+  right: 20px;
+}
+body aside .filters {
+  width: 20vw;
+}
+body aside .filters h5 {
+  text-align: center;
+  margin-bottom: 42px;
+}
+body aside .filters form {
+  padding: 12px;
+  border: 1px #ced4da solid;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+body aside .filters form > * {
+  display: block;
+  margin-bottom: 20px;
+}
+body aside .filters form > div {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+body aside .filters form > div > * {
+  margin-bottom: 12px;
+}
+body aside .filters form .ciudades > label,
+body aside .filters form .fechas > label,
+body aside .filters form .plazasDisponibles > label {
+  font-weight: 700;
+}
+body aside .filters form .btn {
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
 body main {
   min-height: calc(100vh - 216px);
   margin-top: 88px;
+  width: 70vw;
+  position: relative;
 }
 body main > .btn:first-of-type {
   margin-left: 40px;
@@ -29,7 +76,7 @@ body main .event {
 }
 body main .event .card {
   height: 220px;
-  width: 65vw;
+  width: 100%;
   overflow: hidden;
 }
 body main .event .card .row .card-img-top {
@@ -100,11 +147,11 @@ body main .event .btn-warning {
   width: 70px;
   position: absolute;
   bottom: 18px;
-  right: 410px;
+  right: -34px;
 }
 body main .event .btn-danger {
   width: 70px;
   position: absolute;
   bottom: -12px;
-  right: 410px;
+  right: -34px;
 }/*# sourceMappingURL=events.css.map */

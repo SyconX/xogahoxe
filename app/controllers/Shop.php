@@ -25,4 +25,9 @@ $productResponse = $productRead->response(
     $productRead->queryAll(PRODUCT_TABLE)
 );
 
+$ciudadesRead = new Read();
+$ciudades = $ciudadesRead->response(
+    $ciudadesRead->queryAll(PRODUCT_TABLE, 'DISTINCT city')
+);
+
 include_once BASE_PATH . VIEWS_PATH . '/shop.php';

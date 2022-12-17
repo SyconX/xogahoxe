@@ -14,7 +14,12 @@ if (isset($_POST['eventFinder'])) {
             $search
         )
     );
+    $ciudadesRead = new Read();
+    $ciudades = $ciudadesRead->response(
+        $ciudadesRead->queryAll(EVENT_TABLE, 'DISTINCT city')
+    );
     include_once BASE_PATH . VIEWS_PATH . '/events.php';
+
 } else if (isset($_POST['shopFinder'])) {
     $productRead = new Read();
     $columnSearch = ["name", "description"];
@@ -29,6 +34,4 @@ if (isset($_POST['eventFinder'])) {
     );
     // $productResponse = $productRead->response();
     include_once BASE_PATH . VIEWS_PATH . '/shop.php';
-} else {
-
 }

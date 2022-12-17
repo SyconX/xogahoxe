@@ -53,12 +53,19 @@ if ($_POST['newEvent']) {
     unset($_SESSION['playersEvent']['' . $_POST['eventID'] . ''][$position]);
     $response = $eventLeave->userJoinEvent(serialize($_SESSION['playersEvent']['' . $_POST['eventID'] . '']), $_POST['eventID']);
     $_SESSION['playersEvent']['' . $_POST['eventID'] . ''] = "";
+} else if ($_POST['filter']) {
+
 }
 
 $eventRead = new Read();
 // Consulta usuario BD
 $eventResponse = $eventRead->response(
     $eventRead->queryAll(EVENT_TABLE)
+);
+
+$ciudadesRead = new Read();
+$ciudades = $ciudadesRead->response(
+    $ciudadesRead->queryAll(EVENT_TABLE, 'DISTINCT city')
 );
 
 include_once BASE_PATH . VIEWS_PATH . '/events.php';
