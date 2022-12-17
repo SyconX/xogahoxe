@@ -98,7 +98,7 @@ aside .filters form button[type=submit] {
 }
 
 main {
-  min-height: calc(100vh - 216px);
+  min-height: calc(100vh - 156px);
   margin: 158px 40px 0 40px;
 }
 main .grid-container {
