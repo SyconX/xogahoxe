@@ -67,7 +67,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
             <h3 class="name">
                 <?= $gameInfo['name'] ?> <span>(<?= $gameInfo['year'] ?>)</span>
             </h3>
-            <p class="rating" style="background-color: whitesmoke;">
+            <p class="rating" style="background-color: <?php
+            if ($gameInfo['rating'] < 5)
+                echo '#e05b5b';
+            if ($gameInfo['rating'] >= 5 && $gameInfo['rating'] <= 7.5)
+                echo '#5369a2';
+            if ($gameInfo['rating'] > 7.5)
+                echo '#1d804c';
+            ?>;">
                 <?= $gameInfo['rating'] ?>
             </p>
             <p class="rank">

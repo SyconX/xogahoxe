@@ -114,6 +114,7 @@ main .game .rating {
   width: 52px;
   height: 52px;
   border-radius: 20px;
+  color: whitesmoke;
   font-size: 2em;
   font-weight: 700;
   grid-column: 1;
