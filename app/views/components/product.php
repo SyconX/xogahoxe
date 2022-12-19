@@ -11,6 +11,12 @@
         <h5 class="card-title">
             <?= $p->name ?>
         </h5>
+        <p class="card-status">
+            <?= $p->status ?>
+        </p>
+        <p class="card-city">
+            <?= $p->city ?>
+        </p>
         <p class="card-description">
             <?= $p->description ?>
         </p>

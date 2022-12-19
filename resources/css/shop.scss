@@ -125,12 +125,17 @@ main {
                     }
                 }
             }
-            .card-price {
-                position: relative;
-                .icon {
-                    position: absolute;
-                    top: 2px;
-                    right: 0px;
+            .card-body {
+                > * {
+                    margin-bottom: 10px;
+                }
+                .card-price {
+                    position: relative;
+                    .icon {
+                        position: absolute;
+                        top: 2px;
+                        right: 0px;
+                    }
                 }
             }
         }

@@ -122,10 +122,13 @@ main .grid-container .card .card-img-top img {
 main .grid-container .card .card-img-top img:hover {
   transform: scale(1.1);
 }
-main .grid-container .card .card-price {
+main .grid-container .card .card-body > * {
+  margin-bottom: 10px;
+}
+main .grid-container .card .card-body .card-price {
   position: relative;
 }
-main .grid-container .card .card-price .icon {
+main .grid-container .card .card-body .card-price .icon {
   position: absolute;
   top: 2px;
   right: 0px;
