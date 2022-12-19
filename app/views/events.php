@@ -45,7 +45,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/config/config.php';
                     <h4 class="modal-title">
                         <?= $_POST['readEvent'] ? 'Modificar el evento' : 'Crear un nuevo evento' ?>
                     </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" <?= $_POST['readEvent'] ?
+                        "onclick='window.location.assign(\"/eventos\");'" : '' ?>
+                        data-bs-dismiss="modal"></button>
                 </div>
                 <form action=<?= CONTROLLERS_PATH . "/Events.php" ?> method="post">
                     <!-- Modal body -->
